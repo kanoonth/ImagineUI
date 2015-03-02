@@ -46,9 +46,6 @@
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\DataModel\SampleData.json">
-      <PackagePath>DataModel\SampleData.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>

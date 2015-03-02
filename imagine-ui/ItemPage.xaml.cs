@@ -1,5 +1,4 @@
 ﻿using imagine_ui.Common;
-using imagine_ui.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +33,6 @@ namespace imagine_ui
             this.InitializeComponent();
 
             this.navigationHelper = new NavigationHelper(this);
-            this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         } 
 
@@ -66,12 +64,7 @@ namespace imagine_ui
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
-        {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data.
-            var item = await SampleDataSource.GetItemAsync((string)e.NavigationParameter);
-            this.DefaultViewModel["Item"] = item;
-        }
+
 
         /// <summary>
         /// Preserves state associated with this page in case the application is suspended or the
