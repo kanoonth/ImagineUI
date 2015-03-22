@@ -59,6 +59,18 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -82,6 +94,18 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -124,27 +148,77 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
-            _typeNameTable[0] = "imagine_ui.ItemPage";
+            _typeNameTable = new string[34];
+            _typeNameTable[0] = "imagine_ui.AddArePage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "imagine_ui.Common.NavigationHelper";
-            _typeNameTable[4] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[5] = "imagine_ui.Common.ObservableDictionary";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "String";
-            _typeNameTable[8] = "imagine_ui.PivotPage";
+            _typeNameTable[3] = "imagine_ui.BlankPage1";
+            _typeNameTable[4] = "imagine_ui.EditPage";
+            _typeNameTable[5] = "imagine_ui.FeedPage";
+            _typeNameTable[6] = "imagine_ui.ItemPage";
+            _typeNameTable[7] = "imagine_ui.Common.NavigationHelper";
+            _typeNameTable[8] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[9] = "imagine_ui.Common.ObservableDictionary";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "String";
+            _typeNameTable[12] = "imagine_ui.PivotPage";
+            _typeNameTable[13] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
+            _typeNameTable[14] = "Windows.UI.Xaml.DataTemplate";
+            _typeNameTable[15] = "Windows.UI.Xaml.Style";
+            _typeNameTable[16] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
+            _typeNameTable[17] = "System.Enum";
+            _typeNameTable[18] = "System.ValueType";
+            _typeNameTable[19] = "Windows.UI.Xaml.HorizontalAlignment";
+            _typeNameTable[20] = "Windows.UI.Xaml.VerticalAlignment";
+            _typeNameTable[21] = "Double";
+            _typeNameTable[22] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
+            _typeNameTable[23] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
+            _typeNameTable[24] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[25] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[26] = "Telerik.UI.Xaml.Controls.Input.HighlightStyle";
+            _typeNameTable[27] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[28] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
+            _typeNameTable[29] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[30] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
+            _typeNameTable[31] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
+            _typeNameTable[32] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[33] = "Windows.UI.Xaml.Media.Animation.Storyboard";
 
-            _typeTable = new global::System.Type[9];
-            _typeTable[0] = typeof(global::imagine_ui.ItemPage);
+            _typeTable = new global::System.Type[34];
+            _typeTable[0] = typeof(global::imagine_ui.AddArePage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::imagine_ui.Common.NavigationHelper);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[5] = typeof(global::imagine_ui.Common.ObservableDictionary);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::imagine_ui.PivotPage);
+            _typeTable[3] = typeof(global::imagine_ui.BlankPage1);
+            _typeTable[4] = typeof(global::imagine_ui.EditPage);
+            _typeTable[5] = typeof(global::imagine_ui.FeedPage);
+            _typeTable[6] = typeof(global::imagine_ui.ItemPage);
+            _typeTable[7] = typeof(global::imagine_ui.Common.NavigationHelper);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[9] = typeof(global::imagine_ui.Common.ObservableDictionary);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::System.String);
+            _typeTable[12] = typeof(global::imagine_ui.PivotPage);
+            _typeTable[13] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
+            _typeTable[14] = typeof(global::Windows.UI.Xaml.DataTemplate);
+            _typeTable[15] = typeof(global::Windows.UI.Xaml.Style);
+            _typeTable[16] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
+            _typeTable[17] = typeof(global::System.Enum);
+            _typeTable[18] = typeof(global::System.ValueType);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
+            _typeTable[21] = typeof(global::System.Double);
+            _typeTable[22] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
+            _typeTable[23] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
+            _typeTable[24] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[25] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[26] = typeof(global::Telerik.UI.Xaml.Controls.Input.HighlightStyle);
+            _typeTable[27] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[28] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
+            _typeTable[29] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[30] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
+            _typeTable[31] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
+            _typeTable[32] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[33] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -179,15 +253,32 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_ItemPage() { return new global::imagine_ui.ItemPage(); }
-        private object Activate_5_ObservableDictionary() { return new global::imagine_ui.Common.ObservableDictionary(); }
-        private object Activate_8_PivotPage() { return new global::imagine_ui.PivotPage(); }
-        private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
+        private object Activate_0_AddArePage() { return new global::imagine_ui.AddArePage(); }
+        private object Activate_3_BlankPage1() { return new global::imagine_ui.BlankPage1(); }
+        private object Activate_4_EditPage() { return new global::imagine_ui.EditPage(); }
+        private object Activate_5_FeedPage() { return new global::imagine_ui.FeedPage(); }
+        private object Activate_6_ItemPage() { return new global::imagine_ui.ItemPage(); }
+        private object Activate_9_ObservableDictionary() { return new global::imagine_ui.Common.ObservableDictionary(); }
+        private object Activate_12_PivotPage() { return new global::imagine_ui.PivotPage(); }
+        private object Activate_13_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
+        private object Activate_22_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
+        private object Activate_23_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
+        private object Activate_24_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_26_HighlightStyle() { return new global::Telerik.UI.Xaml.Controls.Input.HighlightStyle(); }
+        private object Activate_30_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
+        private object Activate_31_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
+        private void MapAdd_9_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
+        }
+        private void VectorAdd_24_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
+            var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
+            collection.Add(newItem);
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
@@ -200,11 +291,9 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  imagine_ui.ItemPage
+            case 0:   //  imagine_ui.AddArePage
                 userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_ItemPage;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
+                userType.Activator = Activate_0_AddArePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -217,45 +306,285 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
                 xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  imagine_ui.Common.NavigationHelper
+            case 3:   //  imagine_ui.BlankPage1
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_BlankPage1;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  imagine_ui.EditPage
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_EditPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  imagine_ui.FeedPage
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_5_FeedPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  imagine_ui.ItemPage
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_ItemPage;
+                userType.AddMemberName("NavigationHelper");
+                userType.AddMemberName("DefaultViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  imagine_ui.Common.NavigationHelper
                 userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.DependencyObject
+            case 8:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  imagine_ui.Common.ObservableDictionary
+            case 9:   //  imagine_ui.Common.ObservableDictionary
                 userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_5_ObservableDictionary;
+                userType.DictionaryAdd = MapAdd_9_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Object
+            case 10:   //  Object
                 xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  String
+            case 11:   //  String
                 xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  imagine_ui.PivotPage
+            case 12:   //  imagine_ui.PivotPage
                 userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_PivotPage;
+                userType.Activator = Activate_12_PivotPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 13:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_13_ChartAnnotationLabelDefinition;
+                userType.AddMemberName("Format");
+                userType.AddMemberName("Template");
+                userType.AddMemberName("DefaultVisualStyle");
+                userType.AddMemberName("Location");
+                userType.AddMemberName("HorizontalAlignment");
+                userType.AddMemberName("VerticalAlignment");
+                userType.AddMemberName("HorizontalOffset");
+                userType.AddMemberName("VerticalOffset");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 14:   //  Windows.UI.Xaml.DataTemplate
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 15:   //  Windows.UI.Xaml.Style
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 16:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Left", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Left);
+                userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Top);
+                userType.AddEnumValue("Right", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Right);
+                userType.AddEnumValue("Bottom", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Bottom);
+                userType.AddEnumValue("Inside", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Inside);
+                xamlType = userType;
+                break;
+
+            case 17:   //  System.Enum
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                xamlType = userType;
+                break;
+
+            case 18:   //  System.ValueType
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 19:   //  Windows.UI.Xaml.HorizontalAlignment
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  Windows.UI.Xaml.VerticalAlignment
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 21:   //  Double
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 22:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_22_ChartPalette;
+                userType.AddMemberName("Name");
+                userType.AddMemberName("FillEntries");
+                userType.AddMemberName("SpecialFillEntries");
+                userType.AddMemberName("StrokeEntries");
+                userType.AddMemberName("SpecialStrokeEntries");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 23:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_23_PaletteEntryCollection;
+                userType.SetContentPropertyName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes");
+                userType.AddMemberName("Brushes");
+                xamlType = userType;
+                break;
+
+            case 24:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_24_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 25:   //  Windows.UI.Xaml.Media.Brush
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 26:   //  Telerik.UI.Xaml.Controls.Input.HighlightStyle
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_26_HighlightStyle;
+                userType.AddMemberName("FontFamily");
+                userType.AddMemberName("FontWeight");
+                userType.AddMemberName("FontStyle");
+                userType.AddMemberName("Foreground");
+                userType.AddMemberName("FontSize");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 27:   //  Windows.UI.Xaml.Media.FontFamily
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 28:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Black", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Black);
+                userType.AddEnumValue("Bold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Bold);
+                userType.AddEnumValue("ExtraBlack", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.ExtraBlack);
+                userType.AddEnumValue("ExtraBold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.ExtraBold);
+                userType.AddEnumValue("ExtraLight", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.ExtraLight);
+                userType.AddEnumValue("Light", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Light);
+                userType.AddEnumValue("Medium", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Medium);
+                userType.AddEnumValue("Normal", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Normal);
+                userType.AddEnumValue("SemiBold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.SemiBold);
+                userType.AddEnumValue("SemiLight", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.SemiLight);
+                userType.AddEnumValue("Thin", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Thin);
+                xamlType = userType;
+                break;
+
+            case 29:   //  Windows.UI.Text.FontStyle
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
+                userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
+                userType.AddEnumValue("Italic", global::Windows.UI.Text.FontStyle.Italic);
+                xamlType = userType;
+                break;
+
+            case 30:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_30_CalendarCellStyle;
+                userType.AddMemberName("ContentStyle");
+                userType.AddMemberName("DecorationStyle");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 31:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
+                userType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
+                userType.Activator = Activate_31_BusyIndicatorAnimationAdapter;
+                userType.AddMemberName("Animation");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 32:   //  Windows.UI.Xaml.FrameworkElement
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 33:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+                xamlType = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    _otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::Telerik.UI.Xaml.Controls.Chart.Chart_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::Telerik.UI.Xaml.Controls.Data.DataControls_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::Telerik.UI.Xaml.Controls.Input.Input_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::Telerik.UI.Xaml.Controls.Primitives.Primitives_WindowsPhone_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                }
+                return _otherProviders;
+            }
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
 
         private object get_0_ItemPage_NavigationHelper(object instance)
         {
@@ -276,6 +605,221 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
         {
             var that = (global::imagine_ui.PivotPage)instance;
             return that.DefaultViewModel;
+        }
+        private object get_4_ChartAnnotationLabelDefinition_Format(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.Format;
+        }
+        private void set_4_ChartAnnotationLabelDefinition_Format(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.Format = (global::System.String)Value;
+        }
+        private object get_5_ChartAnnotationLabelDefinition_Template(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.Template;
+        }
+        private void set_5_ChartAnnotationLabelDefinition_Template(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.Template = (global::Windows.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_6_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.DefaultVisualStyle;
+        }
+        private void set_6_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.DefaultVisualStyle = (global::Windows.UI.Xaml.Style)Value;
+        }
+        private object get_7_ChartAnnotationLabelDefinition_Location(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.Location;
+        }
+        private void set_7_ChartAnnotationLabelDefinition_Location(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.Location = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation)Value;
+        }
+        private object get_8_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.HorizontalAlignment;
+        }
+        private void set_8_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.HorizontalAlignment = (global::Windows.UI.Xaml.HorizontalAlignment)Value;
+        }
+        private object get_9_ChartAnnotationLabelDefinition_VerticalAlignment(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.VerticalAlignment;
+        }
+        private void set_9_ChartAnnotationLabelDefinition_VerticalAlignment(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.VerticalAlignment = (global::Windows.UI.Xaml.VerticalAlignment)Value;
+        }
+        private object get_10_ChartAnnotationLabelDefinition_HorizontalOffset(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.HorizontalOffset;
+        }
+        private void set_10_ChartAnnotationLabelDefinition_HorizontalOffset(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.HorizontalOffset = (global::System.Double)Value;
+        }
+        private object get_11_ChartAnnotationLabelDefinition_VerticalOffset(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            return that.VerticalOffset;
+        }
+        private void set_11_ChartAnnotationLabelDefinition_VerticalOffset(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
+            that.VerticalOffset = (global::System.Double)Value;
+        }
+        private object get_12_ChartPalette_Name(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            return that.Name;
+        }
+        private void set_12_ChartPalette_Name(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_13_ChartPalette_FillEntries(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            return that.FillEntries;
+        }
+        private void set_13_ChartPalette_FillEntries(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            that.FillEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
+        }
+        private object get_14_PaletteEntryCollection_Brushes(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)instance;
+            return that.Brushes;
+        }
+        private object get_15_ChartPalette_SpecialFillEntries(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            return that.SpecialFillEntries;
+        }
+        private void set_15_ChartPalette_SpecialFillEntries(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            that.SpecialFillEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
+        }
+        private object get_16_ChartPalette_StrokeEntries(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            return that.StrokeEntries;
+        }
+        private void set_16_ChartPalette_StrokeEntries(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            that.StrokeEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
+        }
+        private object get_17_ChartPalette_SpecialStrokeEntries(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            return that.SpecialStrokeEntries;
+        }
+        private void set_17_ChartPalette_SpecialStrokeEntries(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
+            that.SpecialStrokeEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
+        }
+        private object get_18_HighlightStyle_FontFamily(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            return that.FontFamily;
+        }
+        private void set_18_HighlightStyle_FontFamily(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            that.FontFamily = (global::Windows.UI.Xaml.Media.FontFamily)Value;
+        }
+        private object get_19_HighlightStyle_FontWeight(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            return that.FontWeight;
+        }
+        private void set_19_HighlightStyle_FontWeight(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            that.FontWeight = (global::Telerik.UI.Xaml.Controls.Input.FontWeightName)Value;
+        }
+        private object get_20_HighlightStyle_FontStyle(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            return that.FontStyle;
+        }
+        private void set_20_HighlightStyle_FontStyle(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            that.FontStyle = (global::Windows.UI.Text.FontStyle)Value;
+        }
+        private object get_21_HighlightStyle_Foreground(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            return that.Foreground;
+        }
+        private void set_21_HighlightStyle_Foreground(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            that.Foreground = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_22_HighlightStyle_FontSize(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            return that.FontSize;
+        }
+        private void set_22_HighlightStyle_FontSize(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
+            that.FontSize = (global::System.Double)Value;
+        }
+        private object get_23_CalendarCellStyle_ContentStyle(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
+            return that.ContentStyle;
+        }
+        private void set_23_CalendarCellStyle_ContentStyle(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
+            that.ContentStyle = (global::Windows.UI.Xaml.Style)Value;
+        }
+        private object get_24_CalendarCellStyle_DecorationStyle(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
+            return that.DecorationStyle;
+        }
+        private void set_24_CalendarCellStyle_DecorationStyle(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
+            that.DecorationStyle = (global::Windows.UI.Xaml.Style)Value;
+        }
+        private object get_25_BusyIndicatorAnimationAdapter_Animation(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter)instance;
+            return that.Animation;
+        }
+        private void set_25_BusyIndicatorAnimationAdapter_Animation(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter)instance;
+            that.Animation = (global::Windows.UI.Xaml.Media.Animation.Storyboard)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -308,6 +852,154 @@ namespace imagine_ui.imagine_ui_XamlTypeInfo
                 xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "imagine_ui.Common.ObservableDictionary");
                 xamlMember.Getter = get_3_PivotPage_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Format":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Format", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_ChartAnnotationLabelDefinition_Format;
+                xamlMember.Setter = set_4_ChartAnnotationLabelDefinition_Format;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Template":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Template", "Windows.UI.Xaml.DataTemplate");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_ChartAnnotationLabelDefinition_Template;
+                xamlMember.Setter = set_5_ChartAnnotationLabelDefinition_Template;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.DefaultVisualStyle":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "DefaultVisualStyle", "Windows.UI.Xaml.Style");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_ChartAnnotationLabelDefinition_DefaultVisualStyle;
+                xamlMember.Setter = set_6_ChartAnnotationLabelDefinition_DefaultVisualStyle;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Location":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Location", "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_ChartAnnotationLabelDefinition_Location;
+                xamlMember.Setter = set_7_ChartAnnotationLabelDefinition_Location;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.HorizontalAlignment":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "HorizontalAlignment", "Windows.UI.Xaml.HorizontalAlignment");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_ChartAnnotationLabelDefinition_HorizontalAlignment;
+                xamlMember.Setter = set_8_ChartAnnotationLabelDefinition_HorizontalAlignment;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.VerticalAlignment":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "VerticalAlignment", "Windows.UI.Xaml.VerticalAlignment");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_ChartAnnotationLabelDefinition_VerticalAlignment;
+                xamlMember.Setter = set_9_ChartAnnotationLabelDefinition_VerticalAlignment;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.HorizontalOffset":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "HorizontalOffset", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_ChartAnnotationLabelDefinition_HorizontalOffset;
+                xamlMember.Setter = set_10_ChartAnnotationLabelDefinition_HorizontalOffset;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.VerticalOffset":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "VerticalOffset", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_11_ChartAnnotationLabelDefinition_VerticalOffset;
+                xamlMember.Setter = set_11_ChartAnnotationLabelDefinition_VerticalOffset;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.Name":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_12_ChartPalette_Name;
+                xamlMember.Setter = set_12_ChartPalette_Name;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.FillEntries":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "FillEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
+                xamlMember.Getter = get_13_ChartPalette_FillEntries;
+                xamlMember.Setter = set_13_ChartPalette_FillEntries;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Brushes", "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>");
+                xamlMember.Getter = get_14_PaletteEntryCollection_Brushes;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.SpecialFillEntries":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "SpecialFillEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
+                xamlMember.Getter = get_15_ChartPalette_SpecialFillEntries;
+                xamlMember.Setter = set_15_ChartPalette_SpecialFillEntries;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.StrokeEntries":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "StrokeEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
+                xamlMember.Getter = get_16_ChartPalette_StrokeEntries;
+                xamlMember.Setter = set_16_ChartPalette_StrokeEntries;
+                break;
+            case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.SpecialStrokeEntries":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "SpecialStrokeEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
+                xamlMember.Getter = get_17_ChartPalette_SpecialStrokeEntries;
+                xamlMember.Setter = set_17_ChartPalette_SpecialStrokeEntries;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontFamily":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "FontFamily", "Windows.UI.Xaml.Media.FontFamily");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_18_HighlightStyle_FontFamily;
+                xamlMember.Setter = set_18_HighlightStyle_FontFamily;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontWeight":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "FontWeight", "Telerik.UI.Xaml.Controls.Input.FontWeightName");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_19_HighlightStyle_FontWeight;
+                xamlMember.Setter = set_19_HighlightStyle_FontWeight;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontStyle":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "FontStyle", "Windows.UI.Text.FontStyle");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_20_HighlightStyle_FontStyle;
+                xamlMember.Setter = set_20_HighlightStyle_FontStyle;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.Foreground":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Foreground", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_21_HighlightStyle_Foreground;
+                xamlMember.Setter = set_21_HighlightStyle_Foreground;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontSize":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "FontSize", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_22_HighlightStyle_FontSize;
+                xamlMember.Setter = set_22_HighlightStyle_FontSize;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle.ContentStyle":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.CalendarCellStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "ContentStyle", "Windows.UI.Xaml.Style");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_23_CalendarCellStyle_ContentStyle;
+                xamlMember.Setter = set_23_CalendarCellStyle_ContentStyle;
+                break;
+            case "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle.DecorationStyle":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.CalendarCellStyle");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "DecorationStyle", "Windows.UI.Xaml.Style");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_24_CalendarCellStyle_DecorationStyle;
+                xamlMember.Setter = set_24_CalendarCellStyle_DecorationStyle;
+                break;
+            case "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter.Animation":
+                userType = (global::imagine_ui.imagine_ui_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter");
+                xamlMember = new global::imagine_ui.imagine_ui_XamlTypeInfo.XamlMember(this, "Animation", "Windows.UI.Xaml.Media.Animation.Storyboard");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_25_BusyIndicatorAnimationAdapter_Animation;
+                xamlMember.Setter = set_25_BusyIndicatorAnimationAdapter_Animation;
                 break;
             }
             return xamlMember;

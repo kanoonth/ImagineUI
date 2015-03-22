@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="imagine_ui.FeedPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:imagine_ui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+            Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock
+                x:Name="feedTitle"
+                Grid.Row="0" 
+                Text="sfkgjla;sdf" 
+                FontSize="{StaticResource TextStyleExtraLargePlusFontSize}"
+                />
+                <TextBlock
+                x:Name="xx"
+                Grid.Row="1" 
+                HorizontalAlignment="Right" 
+                FontSize="{StaticResource TextStyleMediumFontSize}"
+                Text="2014/2/55"
+                /> 
+            </Grid>
+            <Grid
+            Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                Text="Rate: " FontSize="{StaticResource TextStyleExtraLargePlusFontSize}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                />
+                
+            </Grid>
+            <Image
+            Grid.Row="2" 
+            Source="Assets/Logo.png"/>
+            <TextBlock
+            x:Name="feedInfo"
+            Grid.Row="3"
+            Text="qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" FontSize="{StaticResource TextStyleLargeFontSize}" TextWrapping="Wrap"
+            />
+            <TextBlock
+            Grid.Row="4"
+            Text="ข้อคิดเห็น"
+            FontSize="{StaticResource TextStyleLargeFontSize}"
+            />
+            <TextBox
+            Grid.Row="5" 
+            FontSize="{StaticResource TextStyleExtraLargeFontSize}" TextWrapping="Wrap" AcceptsReturn="True"
+            
+            />
+        </Grid>
+    </ScrollViewer>
+</Page>

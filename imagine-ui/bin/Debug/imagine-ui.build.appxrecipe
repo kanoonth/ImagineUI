@@ -19,6 +19,84 @@
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\imagine-ui.exe">
       <PackagePath>imagine-ui.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.Core.dll">
+      <PackagePath>Telerik.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.Data.dll">
+      <PackagePath>Telerik.Data.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.UI.Xaml.Chart.dll">
+      <PackagePath>Telerik.UI.Xaml.Chart.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.UI.Xaml.Controls.Data.dll">
+      <PackagePath>Telerik.UI.Xaml.Controls.Data.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.UI.Xaml.Input.dll">
+      <PackagePath>Telerik.UI.Xaml.Input.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives.dll">
+      <PackagePath>Telerik.UI.Xaml.Primitives.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\Calendar.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\Calendar.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\CommonResources.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\CommonResources.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Chart\Themes\Generic.xbf">
+      <PackagePath>Telerik.UI.Xaml.Chart\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Controls.Data\Themes\Generic.xbf">
+      <PackagePath>Telerik.UI.Xaml.Controls.Data\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\Generic.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\Generic.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\HubTilePalette.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\HubTilePalette.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Controls.Data\Themes\ListBox.xbf">
+      <PackagePath>Telerik.UI.Xaml.Controls.Data\Themes\ListBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\Resources.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\Resources.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\Resources.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\Resources.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\ThemeColorsLight.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\ThemeColorsLight.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf">
+      <PackagePath>Telerik.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Controls.Data\Themes\ThemeResourcesDark.xbf">
+      <PackagePath>Telerik.UI.Xaml.Controls.Data\Themes\ThemeResourcesDark.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\ThemeResourcesDark.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\ThemeResourcesDark.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf">
+      <PackagePath>Telerik.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Controls.Data\Themes\ThemeResourcesLight.xbf">
+      <PackagePath>Telerik.UI.Xaml.Controls.Data\Themes\ThemeResourcesLight.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf">
+      <PackagePath>Telerik.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf">
+      <PackagePath>Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -43,11 +121,38 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Toolkit.Content\ApplicationBar.Cancel.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Toolkit.Content\ApplicationBar.Check.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Check.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Toolkit.Content\ApplicationBar.Delete.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Delete.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Toolkit.Content\ApplicationBar.Select.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Select.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\README_FIRST.txt">
+      <PackagePath>README_FIRST.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\AddArePage.xbf">
+      <PackagePath>AddArePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\BlankPage1.xbf">
+      <PackagePath>BlankPage1.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\EditPage.xbf">
+      <PackagePath>EditPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\FeedPage.xbf">
+      <PackagePath>FeedPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Work\Kanoon\imagine\imagine-ui\imagine-ui\bin\Debug\ItemPage.xbf">
       <PackagePath>ItemPage.xbf</PackagePath>

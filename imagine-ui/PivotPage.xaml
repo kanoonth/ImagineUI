@@ -20,7 +20,41 @@
     </Page.Transitions>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Popup 
+            Canvas.ZIndex="1" 
+            RequestedTheme="Light"
+            Grid.ColumnSpan="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    x:Name="loginBtn"
+                    Grid.Row="0" 
+                    Grid.Column="0"
+                    HorizontalAlignment="Stretch" 
+                    Background="#FF0123FF"
+                    />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="OR" Foreground="White"
+                    />
+            </Grid>
+
+        </Popup>
         <Pivot x:Uid="Piv" Title="Agro" x:Name="pivot" CommonNavigationTransitionInfo.IsStaggerElement="True">
+            
             <!--Pivot item one-->
             <PivotItem
               x:Uid="PivotI"
@@ -55,7 +89,7 @@
             Grid.Column="0" 
             Grid.ColumnSpan="2" 
             Margin="0,10,10,10" 
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="ข่าว" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}"/>
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="ข่าว" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" Width="200" Height="200" Click="toNewsBtn_Click"/>
 
                     <Button 
             x:Name="toNotiBtn"  
@@ -64,7 +98,7 @@
             Grid.Column="2" 
             Grid.ColumnSpan="2" 
             Background="#CC1BBF4D" 
-            Margin="10,10,10,10"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" Content="แจ้งเตือน" BorderBrush="{x:Null}" />
+            Margin="10,10,10,10"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" Content="แจ้งเตือน" BorderBrush="{x:Null}" Width="200" Height="200" Click="toNotiBtn_Click" />
 
 
                     <!--- Row 5 6 -->
@@ -75,7 +109,7 @@
             Grid.Column="0" 
             Grid.ColumnSpan="2" 
             Background="#FF08BD00" 
-            Margin="0,10,10,20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="ประวัติ" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" BorderBrush="{x:Null}">
+            Margin="0,10,10,20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="ประวัติ" FontSize="{StaticResource TextStyleExtraExtraLargeFontSize}" BorderBrush="{x:Null}" Width="200" Height="200" Click="toProfileBtn_Click">
 
                     </Button>
 
@@ -83,25 +117,25 @@
             x:Name="toSearchBtn"
             Grid.Row="2" 
             Grid.Column="2" 
-            Margin="10,10,10,10" BorderBrush="{x:Null}" Foreground="#FFE02020" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#FF0D6EE1" Content="ค้นหา"/>
+            Margin="10,10,10,10" BorderBrush="{x:Null}" Foreground="#FFE02020" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#FF0D6EE1" Content="ค้นหา" Width="100" Height="100"/>
 
                     <Button 
             x:Name="toAddressBtn"
             Grid.Row="2" 
             Grid.Column="3" 
-            Margin="10,10,10,10" Background="#FFF44B2B" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="พื้นที่" BorderBrush="{x:Null}"/>
+            Margin="10,10,10,10" Background="#FFF44B2B" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="พื้นที่" BorderBrush="{x:Null}" Width="100" Height="100"/>
 
                     <Button 
             x:Name="toHelpBtn"
             Grid.Row="3" 
             Grid.Column="2" 
-            Margin="10,0,10,20" Background="#FFDC22A7" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="ช่วยเหลือ" BorderBrush="{x:Null}"/>
+            Margin="10,0,10,20" Background="#FFDC22A7" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="ช่วยเหลือ" BorderBrush="{x:Null}" Width="100" Height="100"/>
 
                     <Button 
             x:Name="toSettingBtn"
             Grid.Row="3" 
             Grid.Column="3" 
-            Margin="10,0,10,20"  Background="#FFFFB400" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="ตั้งค่า" BorderBrush="{x:Null}"/>
+            Margin="10,0,10,20"  Background="#FFFFB400" HorizontalAlignment="Center" VerticalAlignment="Stretch" Content="ตั้งค่า" BorderBrush="{x:Null}" Width="100" Height="100"/>
 
                 </Grid>
             </PivotItem>
@@ -147,6 +181,7 @@
                         <ListView BorderBrush="Black" Foreground="Black"/>
 
                     </ScrollViewer>
+                    
                 </Grid>
             </PivotItem>
 
@@ -259,7 +294,7 @@
                         Grid.Row="0"
                         Grid.Column="0" 
                         Source="Assets/Logo.png"
-                        Width="180" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        Width="180" Height="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" />
 
                         <Grid
                         x:Name="profileDetail"
@@ -334,6 +369,45 @@
                         Grid.Column="1"
                         Content="แก้ไข" 
                         HorizontalAlignment="Stretch"/>
+
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+            
+            <!--Pivot item six-->
+            <PivotItem
+                x:Uid="PivotItem5"
+                Margin="19,14.5,0,0"
+                Header="จัดการพื้นที่เพาะปลูก">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock 
+                            x:Name="mangeName"
+                            Text="ชื่อ - นามสกุล" 
+                            Grid.Row="0"
+                            FontSize="{StaticResource TextStyleExtraLargePlusFontSize}"/>
+
+                        <ListView
+                            x:Name="mangeList"
+                            BorderBrush="Black" 
+                            Grid.Row="1"
+                             Foreground="Black"/>
+
+                        <Button
+                            x:Name="manageBtn"
+                            Grid.Row="2"
+                            BorderBrush="White" 
+                            Content="เพิ่มพื้นที่เพาะปลูก" 
+                            Foreground="White" 
+                            HorizontalAlignment="Stretch"
+                            />
+
 
                     </Grid>
                 </ScrollViewer>

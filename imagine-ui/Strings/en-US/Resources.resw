@@ -135,9 +135,6 @@
   <data name="Pivot.Title" xml:space="preserve">
     <value>MY APPLICATION</value>
   </data>
-  <data name="PivotItem1.Header" xml:space="preserve">
-    <value>first</value>
-  </data>
   <data name="PivotItem2.Header" xml:space="preserve">
     <value>second</value>
   </data>

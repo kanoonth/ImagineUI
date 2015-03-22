@@ -1,5 +1,11 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="e:\work\kanoon\imagine\imagine-ui\imagine-ui\obj\debug\intermediatexaml\imagine-ui.exe" HashGuid="0593545b-a6dd-09f7-7325-87e23e4f17d0" />
+    <LocalAssembly PathName="e:\work\kanoon\imagine\imagine-ui\imagine-ui\obj\debug\intermediatexaml\imagine-ui.exe" HashGuid="f4fb6339-2581-507b-def4-21d73d77c52a" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.core.dll" HashGuid="e2bc8ae2-1fc6-6fc9-b771-a21a0f9b4ec1" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.data.dll" HashGuid="a420e62e-743d-eaf0-b202-07c1a352efa7" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.ui.xaml.chart.dll" HashGuid="30fa03fc-4fc4-bb0b-693d-a8957d43b2b8" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.ui.xaml.controls.data.dll" HashGuid="c68db859-c8b5-f264-240c-a0b5e495967c" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.ui.xaml.input.dll" HashGuid="316248e9-ea17-a99d-93a0-03d3ba4fe6f8" />
+    <ReferenceAssembly PathName="e:\program files (x86)\telerik\ui for windows universal q1 2015\sdks\windows phone 8.1\telerik ui for windows universal\references\commonconfiguration\neutral\telerik.ui.xaml.primitives.dll" HashGuid="03b03552-370e-1e24-7f04-f6ee0f71c85a" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
